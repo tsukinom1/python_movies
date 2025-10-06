@@ -2,9 +2,9 @@ import json
 import psycopg2
 
 conn = psycopg2.connect(
-    dbname="Movies5",
-    user="postgres",
-    password="Moldir",
+    dbname="movies",
+    user="alkuatzhumatayev",
+    password="",
     host="localhost",
     port="5432"
 )
@@ -28,7 +28,7 @@ for movie in movies_data:
     language_id = languages_cache[lang_name]
 
     cur.execute("""
-        INSERT INTO Movies (imdb_code, title, title_long, slug, year, rating, runtime, language_id,
+        INSERT INTO movies (imdb_code, title, title_long, slug, year, rating, runtime, language_id,
                             summary, description_full, yt_trailer_code, background_image, large_cover_image,
                             state, date_uploaded)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
